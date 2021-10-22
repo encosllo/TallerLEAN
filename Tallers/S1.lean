@@ -85,6 +85,8 @@ end
 lemma EDI (P Q: Prop) (h1: P ↔ Q) : P → Q :=
 begin
   exact iff.elim_left h1,
+  -- (a dreta)
+  -- exact iff.elim_right h1,
 end
 
 
