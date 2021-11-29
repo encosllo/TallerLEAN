@@ -475,6 +475,26 @@ begin
   exact (or.inr (and.intro h5 h6)),
 end
 
+#check TDifSimAss Ω (A Δ B) B C
+-- TEOREMA 8 -- Segona demostració amb tàctica calc
+-- La diferència simètrica de diferències simètriques
+-- torna a ser una diferència simètrica
+theorem TDifSimIt2 : (A Δ B) Δ (B Δ C) = A Δ C :=
+begin
+  have h₁: (A Δ B) Δ (B Δ C)=((A Δ B) Δ B) Δ C, from TDifSimAss Ω (A Δ B) B C,
+  have h₂: ((A Δ B) Δ B)= (A Δ (B Δ B)), from eq.symm (TDifSimAss Ω A B B),
+  have h₃:(B Δ B)=∅, from TDifSimInv Ω B,
+  have h₄:(A Δ ∅)=A, from TDifSimNeutEs Ω A,
+
+  exact (
+    calc
+    (A Δ B) Δ (B Δ C) = ((A Δ B) Δ B) Δ C   : h₁
+    ...               = (A Δ (B Δ B))Δ C    : by rw h₂ 
+    ...               = (A Δ ∅)Δ C          : by rw h₃
+    ...               = A Δ C               : by rw h₄
+  ),
+end
+
 -- TEOREMA 9
 -- La intersecció distribueix sobre la diferència simètrica
 theorem TDifSimIntDist : A ∩ (B Δ C) = (A ∩ B) Δ (A ∩ C) :=
