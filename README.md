@@ -8,7 +8,7 @@ https://leanprover-community.github.io/
 
 # Material de suport
 
-- J. Avigad, K. Buzzard, R.Y. Lewis, P. Massot | <https://leanprover-community.github.io/mathematics_in_lean/index.html> "Mathematics in Lean"
+- J. Avigad, K. Buzzard, R.Y. Lewis, P. Massot | [Mathematics in Lean](https://leanprover-community.github.io/mathematics_in_lean/index.html)
 
 
 
